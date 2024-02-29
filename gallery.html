@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Travel Post Magazine</h1>
+        <nav>
+            <div class="hamburger">☰</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="article.html">Article</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="photo-gallery">
+        <div class="photo"><img src="images/Brooklyn Bridge.jpg" alt="Brooklyn Bridge"></div>
+        <div class="photo"><img src="images/Brooklyn Bridge Walking Trail.jpg" atl="Brooklyn Bridge Walking Trail"></div>
+        <div class="photo"><img src="images/galapagos-islands.jpg" atl="Galapagos islands"></div>
+        <div class="photo"><img src="images/Birds.jpg" atl="Galapagos's Birds"></div>
+        <div class="photo"><img src="images/Giant Tortoise.jpg" atl="Galapago's Giant Tortoise"></div>
+        <div class="photo"><img src="images/Wonder Wheel.jpg" atl="Deno's Wonder Wheel"></div>
+    </main>
+        <div class="gallery-controls">
+            <button id="prev">Previous</button>
+            <button id="next">Next</button>
+        </div>
+        <footer>
+            <p>Contact us at email@travelpostmagazine.com</p>
+        </footer>
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+    </script>
+    <script>
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        const photoGallery = document.querySelector('.photo-gallery');
+        const photos = document.querySelectorAll('.photo');
+        let currentIndex = 0;
+        function showPhoto(index) {
+            photos.forEach((photo, i) => {
+                photo.style.display = i === index ? 'block' : 'none';
+            });
+        }
+        nextButton.addEventListener('click', function () {
+            currentIndex = (currentIndex + 1) % photos.length;
+            showPhoto(currentIndex);
+        });
+        prevButton.addEventListener('click', function () {
+            currentIndex = (currentIndex - 1 + photos.length) % photos.length;
+            showPhoto(currentIndex);
+        });
+        showPhoto(currentIndex);
+    </script>
+</body>
+</html>

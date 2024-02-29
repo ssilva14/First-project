@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newspaper Landing Page</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Travel Post Magazine</h1>
+        <nav>
+            <div class="hamburger">☰</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="article.html">Article</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="featured-articles">
+            <h2>Featured Articles</h2>
+            <div class="featured-item">
+            <img src="images/Galapagos-Islands.jpg" alt="Galapagos islands" width="456">
+            <h3>Galápagos:A Living Tapestry of Evolution</h3>
+            <h4>Embark on a Journey through Time and Nature</h4>
+            <p>ChatGPT | Feb 19, 2024</p>
+            </div>
+            <div class="featured-item">
+            <img src="images/Brooklyn Bridge.jpg" alt="Brooklyn Bridge" width="456">
+            <h3>A Marvel of Engineering and Symbol of Unity</h3>
+            <h4>The Timeless Majesty of the Brooklyn Bridge</h4>
+            <p>ChatGPT | Feb 19, 2024</p>
+        </div>
+        </section>
+        <section class="latest-news">
+            <h2>Latest News</h2>
+            <img src="images/Wonder Wheel.jpg" alt="Deno's Wonder Wheel" width="456">
+            <h3>Deno's Wonder Wheel Amusement Park</h3>
+            <h4>Amusement park in New York City for family, kids and friends</h4>
+            <p>Deno's Wonder Wheel website | Feb 22, 2024</p>
+            <p>We look forward to seeing everyone again next year in Coney Island at Deno's Blessing of the Rides on Opening Day, Palm Sunday, March 24, 2024!</p>
+        </section>
+    </main>
+    <footer>
+        <p>Contact us at email@travelpostmagazine.com</p>
+    </footer>
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
